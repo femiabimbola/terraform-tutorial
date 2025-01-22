@@ -14,6 +14,12 @@ provider "aws" {
   region = "us-east-2"
 }
 
+variable "server_port" {
+  description = "The port the server will use for HTTP requests"
+  type        = number
+  default     = 8080
+}
+
 
 resource "aws_security_group" "instance" {
 
@@ -60,6 +66,5 @@ variable "security_group_name" {
   type        = string
   default     = "terraform-example-instance"
 }
-
 
 
